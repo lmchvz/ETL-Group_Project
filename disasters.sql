@@ -1,3 +1,6 @@
+drop table disasters;
+drop table temps;
+
 create table disasters(
 	year int primary key,
 	all_disaster_count int,
@@ -11,14 +14,18 @@ create table disasters(
 	dry_mass_movement_count int,
 	volcanic_count int,
 	wildfire_count int,
-	all_disaster_cost int,
-	drought_cost int,
-	earthquake_cost int,
-	extreme_temp_cost int,
-	extreme_weather_cost int,
-	flood_cost int,
-	impact_cost int,
-	landslide_cost int,
-	dry_mass_movement_cost int,
-	volcanic_cost int,
-	wildfire_cost int);
+	all_disaster_cost bigint,
+	drought_cost bigint,
+	earthquake_cost bigint,
+	extreme_temp_cost bigint,
+	extreme_weather_cost bigint,
+	flood_cost bigint,
+	impact_cost bigint,
+	landslide_cost bigint,
+	dry_mass_movement_cost bigint,
+	volcanic_cost bigint,
+	wildfire_cost bigint);
+
+create table temps(
+	year int primary key,
+	avg_temp float);
