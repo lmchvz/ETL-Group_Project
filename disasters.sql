@@ -1,5 +1,6 @@
 drop table disasters;
-drop table temps;
+drop table factors;
+drop table affected;
 
 create table disasters(
 	year int primary key,
@@ -26,6 +27,15 @@ create table disasters(
 	volcanic_cost bigint,
 	wildfire_cost bigint);
 
-create table temps(
+create table factors(
 	year int primary key,
-	avg_temp float);
+	avg_temp float,
+	emissions int);
+	
+create table affected(
+	year int primary key,
+	deaths int,
+	injured int,
+	damage int,
+	affected bigint,
+	homeless int);
