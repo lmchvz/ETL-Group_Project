@@ -15,7 +15,7 @@ The final tables or collections that will be used in the production database.
 You will be required to submit a final technical report with the above information and steps required to reproduce your ETL process.
 
 
-# Extract:
+## Extract:
 
 We were able to obtain 3 csv files from Kaggle.com. In addition were able to pull 5 csv files and 1 excel file from the website Data.World. The excel file was resaved as a csv file to keep the sources in a consistent format and for easy import.  
 
@@ -54,7 +54,7 @@ https://data.world/adamhelsinger/fossil-fuel-co-2-emissions
 Original Source: 
 http://cdiac.ornl.gov/ftp/ndp030/global.1751_2013.ems
 
-# Transform:
+## Transform:
 
 In order to have a consistent format for all of our sources we had to transform the data sets, ultimately having the “Year” as the index for all datasets. 
 
@@ -65,13 +65,13 @@ The five datasets from the Humanitarian Data Exchange were formatted the same an
 
 The last DataSet from Data.World needed very little transforming, as it was already in the desired format. In order to condense the information we dropped the columns keeping only the Year and Total columns, we then Filtered the “Year” column to keep the years in the range of 1900-2014 to match the other DataSets. 
 
-# Load: 
+## Load: 
 
 After extracting and transforming the Data into four desired DataFrames, we uploaded these three tables into a single PostregSQL DataBase. We chose a relational database because we had an obvious primary key to use across tables, a clear way to define the tables, and after cleanup, a consistent data set.  
 
 One issue we encountered was that the int data type could not hold numbers large enough for the economic damage costs, so we had to use bigint instead.
 
-# Flask:
+## Flask:
 
 We created a Flask application (04_DISASTER_FLASK.py), that once the database is loaded can be used to retrieve summary or detailed information for one year or for all years.  The number of columns of data presented a challenge in that it made the SQL query unwieldy, but it does work.
 
