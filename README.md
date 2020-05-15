@@ -1,4 +1,4 @@
-# ETL-project
+## ETL Project
 
 Our team was tasked with migrating Data into a production data base. Once we identified our datasets, we performed ETL on the data. 
 
